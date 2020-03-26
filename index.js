@@ -247,9 +247,17 @@ function removeApple(strings) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
-  /* code here */
-}
+
+    function stringSmash(smash) {
+      /* code here */
+      const newSmash = smash.reduce(function(previous, current, index){
+        return index == 0 ? current : `${previous}${current}`;
+      }, 0)
+      return newSmash;
+    }
+
+
+
 
 // A local community center is holding a fund raising 5k fun run and has invited
 // 50 small businesses to make a small donation on their behalf for some much needed
@@ -266,10 +274,15 @@ function stringSmash(/* code here */) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
-}
-
+    function getFullNames(runners) {
+      /* CODE HERE */
+      const data = [];
+      runners.forEach(function(item){
+        data.push(`${item.last_name}, ${item.first_name}`);
+        return data;
+      })
+      return data;
+    }
 /**
  * ### Challenge `firstNamesAllCaps`
  * 
@@ -282,9 +295,13 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
-}
+      function firstNamesAllCaps(runners) {
+        /* CODE HERE */
+        const firstNames = runners.map(function(names){
+          return names.first_name.toUpperCase();
+        });
+        return firstNames;
+      } 
 
 /**
  * ### Challenge `getRunnersByTShirtSize`
@@ -300,9 +317,12 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
-}
+    function getRunnersByTShirtSize(runners, tShirtSize) {
+      /* CODE HERE */
+      return runners.filter(runner => {
+        return runner.shirt_size.toLowerCase() === tShirtSize.toLowerCase();
+    });
+    }
 
 /**
  * ### Challenge `tallyUpDonations`
